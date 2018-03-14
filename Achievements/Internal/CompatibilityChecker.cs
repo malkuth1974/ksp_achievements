@@ -134,7 +134,7 @@ namespace Achievements {
 
 			if (incompatible.Length > 0) {
 				Debug.LogWarning("[CompatibilityChecker] Incompatible mods detected: " + String.Join(", ", incompatible));
-				PopupDialog.SpawnPopupDialog("Incompatible Mods Detected", "Some installed mods are incompatible with this version of Kerbal Space Program. Some features may be broken or disabled. Please check for updates to the following mods:\n\n" + String.Join("\n", incompatible), "OK", false, HighLogic.Skin);
+				//PopupDialog.SpawnPopupDialog("Incompatible Mods Detected", "Some installed mods are incompatible with this version of Kerbal Space Program. Some features may be broken or disabled. Please check for updates to the following mods:\n\n" + String.Join("\n", incompatible), "OK", false, HighLogic.Skin);
 			}
 		}
 

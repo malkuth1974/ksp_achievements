@@ -53,7 +53,7 @@ namespace Achievements {
 			achievementEarnedClip = GameDatabase.Instance.GetAudioClip("blizzy/Achievements/achievement");
 			achievementEarnedAudioSource = gameObject.AddComponent<AudioSource>();
 			achievementEarnedAudioSource.clip = achievementEarnedClip;
-			achievementEarnedAudioSource.panLevel = 0;
+			achievementEarnedAudioSource.panStereo = 0;
 			achievementEarnedAudioSource.playOnAwake = false;
 			achievementEarnedAudioSource.loop = false;
 			achievementEarnedAudioSource.Stop();
@@ -61,7 +61,7 @@ namespace Achievements {
 			windowButton = ToolbarManager.Instance.add("achievements", "achievements");
 			windowButton.TexturePath = "blizzy/Achievements/button-normal";
 			windowButton.ToolTip = "Achievements";
-			windowButton.Visibility = new GameScenesVisibility(GameScenes.FLIGHT, GameScenes.TRACKSTATION, GameScenes.EDITOR, GameScenes.SPH);
+			windowButton.Visibility = new GameScenesVisibility(GameScenes.FLIGHT, GameScenes.TRACKSTATION, GameScenes.EDITOR);
 			windowButton.OnClick += (e) => toggleAchievementsWindow();
 
 			GameEvents.onShowUI.Add(onShowUI);
@@ -233,7 +233,7 @@ namespace Achievements {
 
 		private void awardReputation(Achievement achievement) {
 			if (Reputation.Instance != null) {
-				Reputation.Instance.AddReputation(REPUTATION_REWARD, "Achievement: " + achievement.getTitle());
+				Reputation.Instance.AddReputation(REPUTATION_REWARD, TransactionReasons.Progression);
 			}
 		}
 
